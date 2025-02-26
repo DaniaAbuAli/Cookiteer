@@ -30,14 +30,23 @@ const mainDetails = document.querySelector(".details");
 
 //make navbar link active
 document.addEventListener("DOMContentLoaded", () => {
-  const currentPath = window.location.pathname;
-  const navLink = document.querySelectorAll(".nav-link");
-  navLink.forEach((link) => {
-    if (`/${link.getAttribute("href")}` === currentPath) {
+  let currentPath = window.location.pathname;
+  if (currentPath.startsWith("/Cookiteer")) {
+    currentPath = currentPath.replace("/Cookiteer", "");
+  }
+  currentPath = currentPath.split("/").pop() || "index.html";
+  console.log("Current Path:", currentPath);
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
+    const linkPath = link.getAttribute("href").split("/").pop() || "index.html";
+    if (linkPath === currentPath) {
       link.classList.add("active");
-    } else link.classList.remove("active");
+    } else {
+      link.classList.remove("active");
+    }
   });
 });
+
 
 randomRecipeDetails();
 
