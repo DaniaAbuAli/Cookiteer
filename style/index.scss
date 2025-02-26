@@ -7,7 +7,6 @@ body {
   font-family: "Roboto", serif;
   color: $font-color;
   counter-reset: p-counter;
-  // position: relative;
 }
 
 nav {
@@ -54,7 +53,7 @@ nav .nav-item .nav-link {
   }
 }
 .hero {
-  background-image: url("/header.png");
+  background-image: url("../images/header.png");
   width: 100%;
   height: 300px;
   background-repeat: no-repeat;
