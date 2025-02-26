@@ -1,6 +1,6 @@
 //global variables
 const savedResults = document.querySelector(".saved-results");
-const favourites = JSON.parse(localStorage.getItem("favourites"));
+const favourites = JSON.parse(localStorage.getItem("favourites")) ||[];
 // show saved cards
 function showResults() {
   savedResults.innerHTML = "";
