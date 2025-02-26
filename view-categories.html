@@ -43,7 +43,9 @@
         <div class="collapse navbar-collapse mt-2 mb-3" id="navbarNav">
           <ul class="navbar-nav ms-auto fw-bolder text">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="my-recipes.html">My Recipes</a>
@@ -63,93 +65,26 @@
         </p>
       </div>
     </section>
-    <section class="categories mt-4 p-4 text-center">
-      <div class="container swiper">
-        <div class="title">
-          <h2 class="fw-bolder">Discover Categories</h2>
-        </div>
-        <div class="swiper-container mt-4 p-4">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide p-4" data-name="dessert">
-              <div class="card-body">
-                <i class="fa-solid fa-cake-candles"></i>
-                <h5 class="card-title">Desserts</h5>
-              </div>
-            </div>
-            <div class="swiper-slide p-4" data-name="breakfast">
-              <div class="card-body">
-                <i class="fa-solid fa-bread-slice"></i>
-                <h5 class="card-title">Breakfast</h5>
-              </div>
-            </div>
-            <div class="swiper-slide p-4" data-name="seafood">
-              <div class="card-body">
-                <i class="fa-solid fa-fish"></i>
-                <h5 class="card-title">Seafood</h5>
-              </div>
-            </div>
-            <div class="swiper-slide p-4" data-name="vegan" >
-              <div class="card-body">
-                <i class="fa-solid fa-leaf"></i>
-                <h5 class="card-title">Vegan</h5>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-    <section class="search mt-4 p-4 text-center">
+    <section class="category-results mt-4 p-4 text-center">
       <div class="container">
         <div class="title">
-          <h2 class="fw-bolder">Search For A Recipe</h2>
+          <h2 class="fw-bolder"></h2>
         </div>
-        <form action="" class="mt-4 p-4">
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Type a recipe name here"
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-            />
-            <div class="input-group-append">
-              <button class="btn" type="submit" name="recipe-name">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-        <div class="search-results">
-          <div class="row random">
-            <div class="col-12  col-md-6 col-lg-4  mb-4 d-flex justify-content-center">
-             <div class="card">
-              <img src="images/default.png" alt="" class="card-img-top">
-              <div class="card-body">
-                <div class="name"><h5 class="card-title"></h5></div>
-                <div class="buttons d-flex justify-content-evenly align-items-center mt-3 p-1 ">
-                  <button class="btn view-random"><a href="view-recipe.html">View Recipe</a></button>
-                  <button class="btn save"><i class="fa-regular fa-bookmark empty"></i></button>
-                </div>
-              </div>
-             </div>
-            </div>
-          </div>
+        <div class="show-results mt-4 p-4">
         </div>
       </div>
     </section>
     <footer class="mt-4 p-2 d-flex justify-content-center align-items-center">
-      <div class="container text-center text-white  ">
+      <div class="container text-center text-white">
         <p class="mt-3">&copy; 2025 All Rights Reserved</p>
       </div>
     </footer>
-  
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/all.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/view-categories.js"></script>
   </body>
 </html>
