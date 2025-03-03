@@ -92,7 +92,6 @@ function showData() {
   }
 }
 
-
 function checkSave() {
   let newResults = changeFormat();
   let searchResultsCopy = [...newResults];
@@ -183,9 +182,9 @@ function changeFormat() {
   return newResults;
 }
 
-function viewRecipe(){
+function viewRecipe() {
   const view = document.querySelectorAll(".view");
-  console.log(view)
+  console.log(view);
   let copy = [...results];
   view.forEach((button, i) => {
     button.addEventListener("click", () => {
@@ -194,4 +193,3 @@ function viewRecipe(){
     });
   });
 }
-

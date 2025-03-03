@@ -1,6 +1,7 @@
 //global variables
 const savedResults = document.querySelector(".saved-results");
 const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
 // show saved cards
 function showResults() {
   savedResults.innerHTML = "";
@@ -43,54 +44,52 @@ function viewRecipes() {
   }
 }
 
-if(favourites.length===0){
-  savedResults.innerHTML=`<p>No saved recipes yet! Start adding your favorites now.</p>`
+if (favourites.length === 0) {
+  savedResults.innerHTML = `<p>No saved recipes yet! Start adding your favorites now.</p>`;
 }
 
 //remove from save
 function remove() {
-    const results = document.querySelectorAll(".results .col-12");
-    for (let i = 0; i < results.length; i++) {
-      const icon = results[i].querySelector(".save");
-      icon.addEventListener("click", () => {
-        Swal.fire({
-          title: 'Are you sure?',
-          text: "You want to remove this recipe from your favourites?",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: 'Yes, remove it!',
-          cancelButtonText: 'No, keep it'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            favourites.splice(i, 1);
-            localStorage.setItem("favourites", JSON.stringify(favourites));
-            showRemoveSuccess();
-            showResults();
-          }
-        });
+  const results = document.querySelectorAll(".results .col-12");
+  for (let i = 0; i < results.length; i++) {
+    const icon = results[i].querySelector(".save");
+    icon.addEventListener("click", () => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You want to remove this recipe from your favourites?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, remove it!",
+        cancelButtonText: "No, keep it",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          favourites.splice(i, 1);
+          localStorage.setItem("favourites", JSON.stringify(favourites));
+          showRemoveSuccess();
+          showResults();
+        }
       });
-    }
-    if(favourites.length===0){
-      savedResults.innerHTML=`<p>No saved recipes yet! Start adding your favorites now.</p>`
-    }
-    
+    });
   }
+  if (favourites.length === 0) {
+    savedResults.innerHTML = `<p>No saved recipes yet! Start adding your favorites now.</p>`;
+  }
+}
 
-  function showRemoveSuccess() {
-    const Toast = Swal.mixin({
-      toast: true,
-      position: "top-end", 
-      showConfirmButton: false, 
-      timer: 2000,  
-      timerProgressBar: true, 
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;  
-        toast.onmouseleave = Swal.resumeTimer; 
-      }
-    });
-    Toast.fire({
-      icon: 'success',  
-      title: 'Removed successfully!'
-    });
-  }
-  
+function showRemoveSuccess() {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Removed successfully!",
+  });
+}

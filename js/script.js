@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 randomRecipeDetails();
 
 // get data and show it
@@ -128,6 +127,7 @@ function randomRecipeDetails() {
     tbody.appendChild(tr);
   }
 }
+
 // design checkbox
 const checkbox = document.querySelectorAll('input[type="checkbox"]');
 checkbox.forEach((box) => {
@@ -278,4 +278,3 @@ function showOwnRecipe(obj) {
     tbody.appendChild(tr);
   }
 }
-

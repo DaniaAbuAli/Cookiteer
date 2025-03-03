@@ -7,7 +7,6 @@ let byName = {};
 let byNameResult = [];
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 const categories = document.querySelectorAll(".swiper-slide");
-console.log(favourites);
 
 // get data to random meal
 async function randomMeal() {
@@ -148,7 +147,6 @@ async function searchByName(searchInputValue) {
         byNameResult.push(byName);
         byName = {};
       }
-      // console.log(byNameResult);
       showSearchResults();
       byNameResult = [];
     } else {
@@ -194,7 +192,7 @@ function viewRecipes() {
     results[i].addEventListener("click", () => {
       localStorage.searchMeal = JSON.stringify(searchResultsCopy[i]);
       localStorage.recipeSource = JSON.stringify("viewSearch");
-      searchInput.value="";
+      searchInput.value = "";
     });
   }
 }
@@ -269,7 +267,6 @@ function showSaveSuccess() {
     title: "Saved successfully!",
   });
 }
-
 function showRemoveSuccess() {
   const Toast = Swal.mixin({
     toast: true,
@@ -288,9 +285,10 @@ function showRemoveSuccess() {
   });
 }
 
+//monitor input changes
 searchInput.addEventListener("input", () => {
   if (searchInput.value.trim() === "") {
-    searchResults.innerHTML="";
+    searchResults.innerHTML = "";
     randomMeal();
   }
 });
